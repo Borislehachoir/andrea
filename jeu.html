@@ -1,0 +1,257 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de rôle pour Andréa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
+    <meta name="author" content="Par Boris le geekos">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        MENU🍓
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos</a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Un jeu du morpion, by yours truly, Boris Rocchietti (pompé sur google)</h1>
+    <h2>Une fois que tu as fini de jouer (c'est la première grille), recharges la page.</h2>
+    <hr> <br> <br>
+
+<h1>Le jeu du morpion</h1>
+  <div id="Jeu">
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div id="StatutJeu"></div>
+  </div> 
+</main>
+
+<footer>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+
+    function estValide(button) {
+  return button.innerHTML.length == 0;
+}
+
+function setSymbol(btn, symbole) {
+  btn.innerHTML = symbole;
+}
+
+function rechercherVainqueur(pions, joueurs, tour) {
+  if (
+    pions[0].innerHTML == joueurs[tour] &&
+    pions[1].innerHTML == joueurs[tour] &&
+    pions[2].innerHTML == joueurs[tour]
+  ) {
+    pions[0].style.backgroundColor = "#9ACD32";
+    pions[1].style.backgroundColor = "#9ACD32";
+    pions[2].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[3].innerHTML == joueurs[tour] &&
+    pions[4].innerHTML == joueurs[tour] &&
+    pions[5].innerHTML == joueurs[tour]
+  ) {
+    pions[3].style.backgroundColor = "#9ACD32";
+    pions[4].style.backgroundColor = "#9ACD32";
+    pions[5].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[6].innerHTML == joueurs[tour] &&
+    pions[7].innerHTML == joueurs[tour] &&
+    pions[8].innerHTML == joueurs[tour]
+  ) {
+    pions[6].style.backgroundColor = "#9ACD32";
+    pions[7].style.backgroundColor = "#9ACD32";
+    pions[8].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[0].innerHTML == joueurs[tour] &&
+    pions[3].innerHTML == joueurs[tour] &&
+    pions[6].innerHTML == joueurs[tour]
+  ) {
+    pions[0].style.backgroundColor = "#9ACD32";
+    pions[3].style.backgroundColor = "#9ACD32";
+    pions[6].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[1].innerHTML == joueurs[tour] &&
+    pions[4].innerHTML == joueurs[tour] &&
+    pions[7].innerHTML == joueurs[tour]
+  ) {
+    pions[1].style.backgroundColor = "#9ACD32";
+    pions[4].style.backgroundColor = "#9ACD32";
+    pions[7].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[2].innerHTML == joueurs[tour] &&
+    pions[5].innerHTML == joueurs[tour] &&
+    pions[8].innerHTML == joueurs[tour]
+  ) {
+    pions[2].style.backgroundColor = "#9ACD32";
+    pions[5].style.backgroundColor = "#9ACD32";
+    pions[8].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[0].innerHTML == joueurs[tour] &&
+    pions[4].innerHTML == joueurs[tour] &&
+    pions[8].innerHTML == joueurs[tour]
+  ) {
+    pions[0].style.backgroundColor = "#9ACD32";
+    pions[4].style.backgroundColor = "#9ACD32";
+    pions[8].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+
+  if (
+    pions[2].innerHTML == joueurs[tour] &&
+    pions[4].innerHTML == joueurs[tour] &&
+    pions[6].innerHTML == joueurs[tour]
+  ) {
+    pions[2].style.backgroundColor = "#9ACD32";
+    pions[4].style.backgroundColor = "#9ACD32";
+    pions[6].style.backgroundColor = "#9ACD32";
+    return true;
+  }
+}
+
+function matchNul(pions) {
+  for (var i = 0, len = pions.length; i < len; i++) {
+    if (pions[i].innerHTML.length == 0) return false;
+  }
+
+  return true;
+}
+
+var Afficheur = function(element) {
+  var affichage = element;
+
+  function setText(message) {
+    affichage.innerHTML = message;
+  }
+
+  return { sendMessage: setText };
+};
+
+function main() {
+  var pions = document.querySelectorAll("#Jeu button");
+  var joueurs = ["X", "O"];
+  var tour = 0;
+  var jeuEstFini = false;
+  var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
+  afficheur.sendMessage(
+    "Le jeu peut commencer ! <br /> Joueur " +
+      joueurs[tour] +
+      " c'est votre tour."
+  );
+  for (var i = 0, len = pions.length; i < len; i++) {
+    pions[i].addEventListener("click", function() {
+      if (jeuEstFini) return;
+
+      if (!estValide(this)) {
+        afficheur.sendMessage(
+          "Case occupée ! <br />Joueur " +
+            joueurs[tour] +
+            " c'est toujours à vous !"
+        );
+      } else {
+        setSymbol(this, joueurs[tour]);
+        jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
+
+        if (jeuEstFini) {
+          afficheur.sendMessage(
+            "Le joueur " +
+              joueurs[tour] +
+              ' a gagné ! <br /> <a href="morpion.html">Rejouer</a>'
+          );
+          return;
+        }
+
+        if (matchNul(pions)) {
+          afficheur.sendMessage(
+            'Match Nul ! <br/> <a href="morpion.html">Rejouer</a>'
+          );
+          return;
+        }
+
+        tour++;
+        tour = tour % 2;
+        afficheur.sendMessage("Joueur " + joueurs[tour] + " c'est à vous !");
+      }
+    });
+  }
+}
+
+main();
+
+</script>
+
+</body>
+</html>
+
+
+
+<h1>Le jeu du morpion</h1>
+  <div id="Jeu">
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <div id="StatutJeu"></div>
+  </div> 

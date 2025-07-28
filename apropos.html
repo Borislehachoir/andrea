@@ -1,0 +1,65 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de rôle pour Andréa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
+    <meta name="author" content="Par Boris le geekos">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        MENU🍋
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Quand j'ai dû réfléchir à ce que je souhaitais t'offrir, j'avoue, j'ai paniqué. </h1>
+    <h3> En même temps, à ma place, tu aurais fait quoi ?  </h3>
+    <p> Au début, j'ai pensé à t'offrir une figurine BT21, mais j'ai pas trouvé celle que tu voulais à un prix qui m'était accessible. <br> 
+        Ensuite, j'ai pensé à t'offrir une pièce de un centime, juste pour être un frère sympa. <br></p>
+    <p>Mais je me suis rendu compte que comparé à tout ce que tu as jamais fait pour moi, c'était vraiment être un énorme bâtard. Et ça, je pouvais pas me le permettre. <br>
+       Parce que je suis un homme avec un égo tel qu'il pourrait crever tous les plafonds de l'Empire State Building.</p>
+    <p> Alors j'ai pris mon courage à deux mains, et j'ai décidé que j'allais t'offrir un petit site web que tu pourrais faire tourner n'importe où, avec n'importe quel ordinateur. <br> Avec plein de petites activités pour te distraire un samedi après-midi, ou pendant un cours particulièrement barbant. </p>
+    <p> Mais tu m'excuseras, évidemment, s'il n'est pas aussi beau qu'un blog de Taylor Swift ou le site officiel de BK. J'ai fait tout ce que tu vois en deux jours et demi C':</p>
+    <br> <br>
+    <div>INFORMATIONS TECHNIQUES : <br>
+        <ul>
+            <li>Le site est entièrement écrit en HTML5, CSS3 et Javascript</li>
+            <li>Il est responsive, donc il s'adapte à tous les écrans (plus ou moins bien, essaies pas de l'allumer sur un téléphone).</li>
+            <li>Il possède évidemment des secrets, mais essaie de les trouver sans regarder le code, évidemment. </li>
+            <li> Pour plus d'explications sur les languages utilisés, rendez-vous dans la section 'Approfondir', disponible avec le bouton du même nom. </li>
+        </ul>
+
+    </div>
+    <hr> <br> <br>
+
+</main>
+
+<footer>
+    <button><a href="approfondir.html">Approfondir</a></button>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+</script>
+
+</body>
+</html>

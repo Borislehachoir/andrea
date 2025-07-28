@@ -1,0 +1,216 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de rôle pour Andréa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
+    <meta name="author" content="Par Boris le geekos">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        MENU🍋
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Salut Andréa ! </h1>
+    <p>Pour une fois, je me suis dit que j'allais mettre à profit mes compétences en informatique (avec l'aide de Chat) pour te proposer un cadeau un peu différent de d'habitude</p>
+    <p>Explore la page, testes les boutons. Le jeu te propose trois choix, et parmi les trois il y en a toujours un qui sera le mauvais. Quant au bouton Autisme... bon, tu verras par toi-même.</p>
+    <hr> <br> <br>
+    <div id="texte" class="context"></div>
+    <div id="choix" class="choix"></div>
+</main>
+
+<footer>
+    <button id="wearesoback">Revenir</button>
+    <button id="restart">Recommencer</button>
+    <button id="autisme">Autisme</button>
+</footer>
+
+<script>
+
+function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+
+const scenes = {
+    start: {
+        texte: "Vous venez d'être virée de votre emploi... Il est 21h55. Votre copain vous fixe depuis la webcam.",
+        options: [
+            { texte: "Pousser un awaaaaaaaa désespéré", next: "rire" },
+            { texte: "Lui dire oui", next: "norvege" },
+            { texte: "Lui dire 'attends je réfléchis'", next: "bad_reflechir" }
+        ]
+    },
+    rire: {
+        texte: "Il éclate de rire, ça détend toute l’ambiance. Il vous dit qu'il vous aime comme ça. Bonne décision.",
+        options: []
+    },
+    bad_reflechir: {
+        texte: "Tu réfléchis, encore. Trop. Et il le sent. Il referme l’ordi en soupirant. Ce n'était pas le moment d'hésiter.",
+        options: []
+    },
+    norvege: {
+        texte: "Vous partez avec lui en Norvège. Il vous demande en mariage (encore une fois).",
+        options: [
+            { texte: "Rire", next: "rire2" },
+            { texte: "Refuser poliment", next: "refuser" },
+            { texte: "Jouer le jeu", next: "humour" }
+        ]
+    },
+    rire2: {
+        texte: "Ahahaha sacré Maxime, mais quel humoriste ! Il rit aussi, et vous passez un super moment en Norvège. Vous revenez, le master se passe trop bien et vous adoptez un adorable petit chat. Il s'appelle Ténébranus, et il est tout simplement adorable.",
+        options: [
+            {texte : "Passer un moment avec le chat", next: "chat"},
+            {texte : "Passer un moment devant une vidéo de Laink et Terracid", next:"ytb"},
+            {texte : "Embrasser passionnément Maxime et lui dire 'merci d'être là pélo, je t'aime en vrai'"}
+        ]
+    },
+    refuser: {
+        texte: "Il est un peu triste. Vous adoptez un cactus à la place. C'est bien, les cactus... Hm.",
+        options: []
+    },
+    humour: {
+        texte: "Il rigole. Tu rigoles aussi. Il ne rigole plus. Tu ne comprends pas pourquoi. Il s'apprête à dire quelque chose, et tu t'inquiètes qu'il dise... ",
+        options: [
+            { texte: "Ahahah tu y as cru ? ", next: "trodebar" },
+            { texte: "Je veux vraiment t'épouser, Andréa. Tiens, cette bague en opale, bleue comme tes yeux sublimes.", next: "nooon" },
+            { texte: "Gros silence.", next: "silence" }]
+    },
+
+    chat : {
+
+        texte: "Ténébranus est un chat adorable, il ronronne et se frotte contre toi avec la même vigueur qu'Assol. Soudainement, il se lève, et s'asseoit devant sa gamelle, en roulant des yeux, comme pour dire 'aboules la bouffe.' Quelle nourriture vas-tu abouler ?",
+        options: [
+            { texte: "Du Shéba", next: "sheba" },
+            { texte: "De la viande boeuf nustrale 100% bio made in Chinorsica", next: "nourrir_viande" },
+            { texte: "Oh c'est bon, il peut bien attendre.", next: "chat_mort" }
+        ]
+    },
+    ytb : {
+        texte: "Tu t'allumes une vidéo de Laint et Terracid, en espérant qu'elle sera bonne.",
+        options: [
+            { texte: "c'est de la merde.",},
+            { texte: "Faire une pause sans écrans", next: "pause" },
+            { texte: "Elle est exceptionnelle, quelle masterclass je pleure" }
+        ]
+    },
+
+    trodebar: {
+        texte: "Il rigolait, effectivement. Pas de mariage, ni aujourd'hui ni demain, ni jamais. Vous n'êtes pas Belly et Jeremiah. ",
+        options: []
+    },
+    nooon: {
+        texte: "Tu restes plantée là, la bouche grande ouverte. Et puis tu lâches un AWAAAAAAAW.",
+        options: []
+    },
+   silence : {
+        texte: "Il te regarde, et tu le regardes. Vous vous regardez. Et puis il se met à rire, et tu ris aussi. C'était une blague, bien sûr.",
+        options: []
+    },
+    sheba: {
+        texte: "Ténébranus dévore la nourriture avec appétit. Il est heureux, et tu es heureuse de le voir heureux.",
+        options: []
+    },
+    nourrir_viande: {
+        texte: "Ténébranus renifle la viande, puis te regarde avec un air de satisfaction intense en ronronnant. Je crois que la viande lui plaît.",
+        options: []
+    },
+    chat_mort: {
+        texte: "Ténébranus reste là, devant sa gamelle. Il commence à perdre ses poils, et devient un sphinx. Maxime est horrifié, et te demande qu'est-ce que tu as fait à son chat. Tu lui dis 'rien', il te dit 'alors tu ne me vaux pas'. Il te jette en dehors de chez lui sous fond sonore de chaudière qui fuit, sans argent ni rien. Tu finis pauvre, droguée, chauve et tu meurs. ",
+        options: []
+    },
+    pause: {
+        texte: "Tu prends le bus pour Vizille, et une fois au parc, là-bas à scruter les oies et les cygnes, tu te sens franchement mieux. Au lieu d'avoir le cafard, tu as des canards. Pratique.",
+        options: []
+    }
+};
+
+
+const faitsLoufoques = [
+    " The royal penguin was once thought to be a subspecies of the macaroni penguin, but we now know it isn't. And it's quite cute.",
+    " Citrus aren't fruits, but berries. They are classified as hesperidia, which sounds a little bit too poetic for bloody berries.",
+    " Cats are believed to be the only mammals who cannot detect sweetness.",
+    "The coqui frog might be small, but oh boy does it shout : more than 100 decibels ! That's louder than a goddamn chainsaw !",
+    "The word strawberry is peculiar amongst Germanic languages. They think it came from the habit kids had to string them with straws. ",
+    "The name Andrea, which we inherited from Greeks, can be traced back to Proto-Indo-European, and have derivations in sanskrit, old Irish and Latin. It does still mean man, as opposed to a woman, though. ",
+    "Maximus means the biggest, but its origins can be traced further than latin : méǵh₂s, in Proto-Indo-European, which means big, great. He's a great man, your boyfriend. ",
+    "Wearing a tie can reduce the blood flow to your brain by 7.5%. Maybe VK staff should considering loosening theirs...",
+    "Sans ambages, cet anachorète s'est saisi de ce vitoulet vireux, et l'a envoyé se faire lanlaire. Un pied-plat s'en empare, mais ce faisant, ramasse un gadin. Quelle gabegie ! ",
+    "Straight lines do not exist. If you zoom enough, you'll see they're actually slightly curved.",
+    "If humans had a penis proportionate to barnacles, it would be 13.72 meters long. <I wouldn't like being a girl. ",
+    "There's more than 50 ways to say 'Il n'a pas l'eau à tous les étages'. ",
+    "Kangaroos cannot jump backwards. Loosers.",
+    "Frogs do not swallow, they blink to push food in their stomachs.",
+    "Boris could come from various origins. It could be from the slavic бороться, or борец (warrior, aconit). It could come from proto-bulgarian bars, meaning snow panther, but also from Mongolian bogori (small) or Old Persian vares, heir. The slavic бороться came from Old slavic брати (going to war), which came from Indo-European bher- (cut, pierce). That was actually so long to research, but that's so interesting !!! "
+]
+
+
+let currentScene = "start";
+let historique = [];
+
+
+function afficherScene(nomScene) {
+    if (currentScene !== nomScene) {
+        historique.push(currentScene);
+    }
+
+    const scene = scenes[nomScene];
+    currentScene = nomScene;
+
+    document.getElementById("texte").innerText = scene.texte;
+
+    const choixDiv = document.getElementById("choix");
+    choixDiv.innerHTML = "";
+
+    scene.options.forEach(option => {
+        const bouton = document.createElement("button");
+        bouton.innerText = option.texte;
+        bouton.onclick = () => afficherScene(option.next);
+        choixDiv.appendChild(bouton);
+    });
+}
+
+// Initialisation
+window.onload = () => {
+    afficherScene("start");
+
+    document.getElementById("restart").onclick = () => {
+        historique = [];
+        afficherScene("start");
+    };
+
+    document.getElementById("wearesoback").onclick = () => {
+        if (historique.length > 0) {
+            const lastScene = historique.pop();
+            afficherScene(lastScene);
+        } else {
+            alert("Tu es déjà au début !");
+        }
+    };
+
+    document.getElementById("autisme").onclick = () => {
+        const fait = faitsLoufoques[Math.floor(Math.random() * faitsLoufoques.length)];
+        alert("Did you know ? " + fait);
+    };
+};
+</script>
+
+</body>
+</html>

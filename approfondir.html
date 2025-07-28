@@ -1,0 +1,97 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de rôle pour Andréa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
+    <meta name="author" content="Par Boris le geekos">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        MENU🍋
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+            <li><a href="page1.html">></a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Si tu es ici, c'est que tu es curieuse d'en savoir plus sur ces trois languages de programmation que j'ai utilisés</h1>
+    <h2>Pour te la faire courte :</h2> <br>
+    <p> HyperText Markup Language, de son petit nom HTML, est un language de balisage qui date vraiment des débuts d'Internet. Genre les années 1990. Dix ans avant Maximus. <br>
+        Un language de balisage, c'est quoi ? C'est une suite d'attributs et de balises (genre la balise <code>&lt;p&gt;</code> pour les paragraphes comme celui-ci) qui permettent de structurer et d'ordonner la mise en page d'un site. <br>
+        HTML fait partie de la grande famille des languages front-end - en gros, ceux qui s'occupent de l'apparence du site. <br> <br>
+        Cascading Style Sheets, ou CSS, est un language de style apparu en 1996. Parce que si je laisse mon HTML tel quel, désolé, mais c'est vraiment hideux. <br>
+        Les language de style comme CSS, dont j'utilise la troisième et plus récente version, permettent de modifier l'apparence d'une balise en lui attribuant des propriétés ou des valeurs <br>
+        (par exemple, si je veux que ce paragraphe soit couleur blé, je peux lui attribuer la propriété <code>color: wheat;</code>). <br> <br>
+
+        Javascript, enfin, est un language de programmation orienté objet* créé en 1995 par Netscape, qui permet d'ajouter des fonctionnalités dynamiques à un site. Ok, super, mais c'est quoi, les fonctionnalités dynamiques ? <br>
+        Très simple. Les languages HTML et CSS sont statiques, donc ils ne changent jamais. Qu'importe le comportement du mec qui se balade sur le site, ça change rien. <br>
+        Maintenant, si j'utilise Javascript... je peux faire des horloges qui changent en temps réel. <br> Je peux faire un jeu de rôle pour ma soeur sans créer 15000 pages. <br>Je peux lui proposer un menu fonctionnel, et des boutons pour recommencer sa partie depuis le début. <br>
+        En gros, Javascript, c'est le language qui permet de rendre un site interactif/ plus sympa à utiliser / moins emmerdant à coder. 
+        <br>
+        Je te quitte à présent sur un petit exemple de Javascript, qui te permettra de changer la couleur de fond du site en cliquant sur le bouton ci-dessous. <br>
+        En voici le code : <br> <br>
+        <code>
+        
+        function changeBackground() { <br>
+        const btn = document.getElementById('colorButton'); <br>
+        const originalColor = document.body.style.backgroundColor; <br>
+        document.body.style.backgroundColor = 'darkkhaki'; <br>
+        btn.disabled = true; <br>
+        setTimeout(() => { <br>
+            document.body.style.backgroundColor = originalColor || '#fff8f0'; <br>
+            btn.disabled = false; <br>
+        }, 3000);
+    }</code>
+    <br>
+    <br>
+        <button id="colorButton" onclick="changeBackground()">Changer la couleur de fond</button>
+    </p>
+    
+    <div class="smalldiv"> *orienté objet : language qui repose sur des objets (structure reposant sur des variables et des fonctions) et des classes définies le plus souvent par des identifiants (id). </div>
+    <hr> <br> <br>
+
+</main>
+
+<footer>
+    
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+
+    function changeBackground() {
+        const btn = document.getElementById('colorButton');
+        const originalColor = document.body.style.backgroundColor;
+
+        document.body.style.backgroundColor = 'darkkhaki';
+
+        btn.disabled = true;
+        
+        setTimeout(() => {
+            document.body.style.backgroundColor = originalColor || '#fff8f0'; 
+            btn.disabled = false;
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
