@@ -1,0 +1,287 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadeau pour Andréa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
+    <meta name="author" content="Par Boris le geekos">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+        MENU🍓
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Salut Andréa ! </h1>
+    <p> J'ai écrit quand même la blinde de poèmes depuis que je suis entré en seconde, alors je me suis dis que je t'en partagerais quelques-uns.  </p>
+    <hr> <br> <br>
+    
+    <h2>Mes poèmes</h2>
+<div class="galerie" id="poeme-gallery">
+    <div class="poeme" onclick="openModal('modal1')"
+         style="background-image: url('https://plus.unsplash.com/premium_photo-1664304423623-4f9d5ed90b4f?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="poeme-title">Ciel bleu, ciel gris (29/05/2023)</div>
+    </div>
+
+    <div class="poeme" onclick="openModal('modal2')"
+         style="background-image: url('https://plus.unsplash.com/premium_photo-1751667124857-32b5a1c63d8a?q=80&w=741&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="poeme-title">Au-delà de l'horizon</div>
+    </div>
+
+    <div class="poeme" onclick="openModal('modal3')"
+         style="background-image: url('https://i.pinimg.com/736x/79/4a/84/794a84b1cc4205f1021ee08716ca31a8.jpg');">
+        <div class="poeme-title">There's this girl</div>
+    </div>
+
+    <div class="poeme" onclick="openModal('modal4')"
+         style="background-image: url('https://i.scdn.co/image/ab67616d0000b27359f97460b84ca76ecf1b8d43');">
+        <div class="poeme-title">Quand je te vois</div>
+    </div>
+
+    <div class="poeme" onclick="openModal('modal5')"
+         style="background-image: url('https://i.pinimg.com/736x/43/f5/aa/43f5aac50e1cc048c97ecbb8bcde1393.jpg');">
+        <div class="poeme-title">J'ai parlé avec la nuit</div>
+    </div>
+
+    <div class="poeme" onclick="openModal('modal6')"
+         style="background-image: url('https://i.pinimg.com/1200x/c8/14/16/c814166148f118e74f9f785c5623b74a.jpg');">
+        <div class="poeme-title">Je t'aime</div>
+    </div>
+
+</div>
+
+
+
+<!-- Modals -->
+<div class="modal hidden" id="modal1">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Ciel bleu, ciel gris (29/05/2023)</h2>
+        <p>
+        J'entends le ciel qui tremblote,<br> 
+        Doucement, comme si la Pluie toquait à ma porte, <br>
+        Dans le ciel d'octobre où mes mains gantées grelotent, <br>
+        Comme si un frisson glacial abrasait mon âme déjà morte. <br> <br>
+
+        Le ciel couvert de son chapeau de plomb, <br>
+        Couvre cette vallée plate où tout se confond. <br>
+        Rien n'est plus terrible que la décapitation <br>
+        D'un espoir, enfermé seul sous ce dôme en chapeau melon. <br> <br>
+
+        Mais le monde reste beau ! Demain sera différent ! <br>
+        Mais...le sera-il vraiment ? <br>
+        Et bientôt, je verrai peut-être arriver le printemps ! <br>
+        Oui...mais je vais devoir attendre encore combien de temps ? <br> <br>
+
+        Le monde est gris, le monde peut être morne, <br>
+        Mais s'il te plaît, crois-moi quand je te le dis, <br>
+        Rien n'est meilleur que d'être ici. <br> <br>
+
+        Pourtant, même s'il est étranglé jusqu'à en devenir violet, <br>
+        L'espoir demeure immortel et inviolé. <br>
+        Même si d'un coup, de ma vie il se fermait un volet, <br>
+        Ce ne serait en vérité qu'une nouvelle opportunité de voler. <br> <br>
+
+        J'entends le ciel qui se réchauffe, <br>
+        Rapidement, parce que le Soleil est sain et sauf. <br>
+        Dans le ciel bleuissant de mars où mes mains nues se promènent librement, <br>
+        Comme si mon âme épuisée revenait d'une longue hibernation, paisiblement. 
+        </p>
+    </div>
+</div>
+
+<div class="modal hidden" id="modal2">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Au-delà de l'horizon (04/2022)</h2>
+        <p> 
+        Au-delà de l'horizon se trouve l'infini,<br>
+        Lointain, profond, indescriptible.<br>
+        On pourrait presque toucher de nos doigts juvéniles son fil invisible,<br>
+        Qui s'étend vers les limites de ce monde tandis que nous rattrape la nuit.<br><br>
+
+        Le crépuscule s'achève sous nos yeux surpris.<br>
+        Les dernières lueurs solaires nous éclairent.<br>
+        Les nuages s'éloignent vers l'infinité d'autres horizons, plus clairs<br>
+        Que ceux qui nous couvrent ici.<br><br>
+
+        La nuit est là, installée,<br>
+        Tout le monde est aussi là, installé.<br>
+        La télévision s'allume, nous voyons un monde lointain juste à nos côtés,<br>
+        Là où avant tout était très loin, maintenant tout est très près.<br><br>
+
+        Et le soir, avant de nous coucher, nous pensons souvent à demain.<br>
+        Les nuages reviendront sûrement jouer dans le ciel bleu,<br>
+        Les chats miauleront, les chiens aboieront, et nous nous tiendrons la main,<br>
+        Tandis que le monde entamera un air entraînant et joyeux.<br><br>
+
+        Au-delà de l'horizon, loin de nous, se trouve l'infini,<br>
+        Et nous le contemplerons, nous l'aimerons de tout notre cœur, de toute de notre âme.<br>
+        Rien ne s'arrête, tout avance, même s'il peut se passer bien des choses infâmes,<br>
+        Et c'est avec cette sublime certitude que nous poursuivrons avec espoir le fil de notre vie.<br></p>
+    </div>
+</div>
+
+<div class="modal hidden" id="modal3">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Revenir (2024)</h2>
+        <p>
+        Le soleil se tait, et regardent mes yeux fuyants <br>
+        La prairie, les étoiles et par mégarde, <br>
+        Sur un visage stellaire se fixant. <br> <br>
+
+        J'ai l'habitude de la solitude, ça fait tellement longtemps. <br>
+        Mais voilà que soudain, dans mon horizon entouré de néant, <br>
+        Une lumière s'allume aux racines du ciel. <br> <br>
+
+        Elle me sourit, elle m'aime, elle me désire. <br>
+        Alors je suis heureux, je ris, je retrouve le sourire. <br>
+        Mais le temps d'un soupir, et elle s'est évaporée dans la nuit. <br>
+        Alors je reviens à mes habitudes, lentement, redécouvrant mes sentiments. <br> <br> 
+
+        Sauf que mes larmes sont maintenant des poussières d'étoiles, <br>
+        Mon cœur voudrait mettre les voiles <br>
+        Et ma tête regarde loin vers l'horizon, <br>
+        Le cerveau bourdonnant d'une seule question : <br> <br>
+
+        "Est-ce que je pourrais jamais revenir à avant ?" </p>
+    </div>
+</div>
+
+<div class="modal hidden" id="modal4">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Quand je te vois (2024)</h2>
+        <p>
+        Quand je te vois venir, <br>
+        J'ai le cœur qui bat fort, <br>
+        Comme si un marteau écrasait tout mon corps. <br>
+        Un sourire, je perds mes mots, et plus moyen de réfléchir. <br><br>
+
+        Quand je te vois, mon cœur se serre à m'en faire pleurer. <br>
+        Et en même temps, j'ai envie de te serrer <br>
+        Fort, fort, fort. <br>
+        Jusqu'à ce que la nuit m'enveloppe, au dedans, et en dehors. <br> <br>
+
+        La soirée s'éternise dans la solitude, <br>
+        La fureur de mes émotions m'écrase dans la turpitude. <br>
+        Les idées se succèdent qui m'étreignent comme un garrot, <br>
+        Et ma tête se perd dans les fumées d'algarot. <br> <br>
+
+        J'ai la tête qui tourne <br>
+        -Pas forcément rond. <br>
+        Et souvent, tu m'inspires des petites ritournelles, <br>
+        Qui loueraient à quel point tu es belle. <br> <br>
+
+        Malgré tout, je suis heureux de te connaître, <br>
+        Ma vie est pleine de lumière quand je perçois ton être, <br>
+        Je veux faire mieux, toujours, et sans arrêt, <br>
+        Et puis un jour enfin, avoir l'impression de te mériter. 
+        </p>
+    </div>
+</div>
+
+<div class="modal hidden" id="modal5">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <h2>J'ai parlé avec la nuit (2023)</h2>
+        <p>
+        J'ai parlé comme chaque soir avec la nuit. <br>
+        Avec passion, en dépression, ou sans pression. <br>
+        Avec un amour infini de l'homme, une compassion, <br>
+        Ou l'envie de tous les anéantir dans une grande explosion. <br> 
+        Mais j'ai parlé avec la nuit, et ça ne m'a vraiment pas nui. <br> <br>
+
+        '' Que t'est-il arrivé de beau ?''. <br>
+        C'est une question que souvent, elle me pose, <br>
+        Alors, dis, je ne tourne pas autour du pot, <br>
+        Et je lui répond '' oh, tout plein de choses. '' <br> <br>
+
+        Alors elle se fout de moi, <br>
+        Enfin plutôt que c'est ce que je crois, <br>
+        Et elle me demande moults détails, de la profondeur, <br>
+        Enfin, pas tous les jours que, pour ça, je suis d'humeur. <br> <br>
+
+        Et puis, que lui dirais-je ? Que s'exclamer ? <br>
+        Je ne suis pas une cathédrale, je ne suis pas Versailles, <br>
+        Je n'ai ni portail, ni autel, ni vitrail. <br>
+        Je ne suis qu'un mélancolique individu perdu dans la voie lactée. <br> <br>
+
+        Donc je lui dis que ça passe, je me plains gentiment de ma vie, <br>
+        Et alors, c'est toujours là que je l'entend qui rit ! <br>
+        Alors je m'inquiète, je m'insurge, je ne comprends pas ! <br>
+        Et là, elle me répond, juste cette fois: <br>
+
+        '' Mais qui t'empêche d'être juste heureux de ce que tu as ? ''  <br>
+        </p>
+    </div>
+</div>
+
+<div class="modal hidden" id="modal6">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <h2>Je t'aime (21.04.2022)</h2>
+        <p>
+        Ah, tu m'as enfin sorti de mon inaffective prison, <br>
+        Tout en m'y renfermant, pourtant, <br>
+        J'en ai eu des élancements, car je t'aime tant, <br>
+        Mais las ! Si tu ne m'aimes pas, à quoi bon toute cette Passion ? <br> <br>
+
+        Mon coeur t'aime, mon coeur te hait, <br>
+        Je t'évite le plus possible pour ne pas plus me blesser, <br>
+        Parce que je n'ai pas la force pour que tu me repousses, tu sais ? <br>
+        Et devant moi, se dresse une invincible, une terrible haie. <br> <br>
+
+        Profondément verte, fleurie du blanc miroitant d'un inexistant avenir, <br>
+        Je sens, l'oeil morne, mon âme vaguement aller, partir, puis revenir, <br>
+        Telles de froides vaguelettes caressant nos beiges pieds, <br>
+        Perdue entre dix mille mondes, entre la Création et l'Eternité. <br> <br>
+
+        Et rien ne me sortirait de cet étouffant cocon, <br> 
+        Où tu n'existerais qu'en mes songes, <br>
+        Avec l'espoir secret de sortir de cet effroyable mensonge, <br>
+        Sans arrêt, qui me fait fait fuir vers d'autres horizons.
+        </p>
+    </div>
+</div>
+
+
+</main>
+
+<footer>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+
+    function openModal(id) {
+        document.getElementById(id).classList.remove("hidden");
+    }
+    function closeModal(id) {
+        document.getElementById(id).classList.add("hidden");
+    }
+</script>
+
+</body>
+</html>
