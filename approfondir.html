@@ -10,18 +10,24 @@
 </head>
 <body>
 <header>
-    <div class="hamburger" onclick="toggleMenu()">
-        MENU🍋
+    <div class="header-top">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+            <span>Andrea.com</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            MENU🍋
+        </div>
     </div>
 
     <nav id="menu" class="hidden">
         <ul>
             <li><a href="index.html">Jeu de rôles💃🏻</a></li>
             <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos du site</a></li>
             <li><a href="poemes.html">Poèmes</a></li>
-            <li><a href="apropos.html">A propos</a></li>
             <li><a href="jeu.html">Morpion</a></li>
-            <li><a href="page1.html">></a></li>
         </ul>
     </nav>
 
@@ -49,12 +55,12 @@
         function changeBackground() { <br>
         const btn = document.getElementById('colorButton'); <br>
         const originalColor = document.body.style.backgroundColor; <br>
-        document.body.style.backgroundColor = 'darkkhaki'; <br>
+        document.body.style.backgroundColor = 'lightsalmon'; <br>
         btn.disabled = true; <br>
         setTimeout(() => { <br>
             document.body.style.backgroundColor = originalColor || '#fff8f0'; <br>
             btn.disabled = false; <br>
-        }, 3000);
+        }, 2000);
     }</code>
     <br>
     <br>
@@ -66,8 +72,8 @@
 
 </main>
 
-<footer>
-    
+<footer><div>aaaaaaa<br><br></div>
+    <div style="color:peru;">aaaa</div>
 </footer>
 
 <script>
@@ -83,14 +89,14 @@
         const btn = document.getElementById('colorButton');
         const originalColor = document.body.style.backgroundColor;
 
-        document.body.style.backgroundColor = 'darkkhaki';
+        document.body.style.backgroundColor = 'lightsalmon';
 
         btn.disabled = true;
         
         setTimeout(() => {
             document.body.style.backgroundColor = originalColor || '#fff8f0'; 
             btn.disabled = false;
-        }, 3000);
+        }, 2000);
     }
 </script>
 

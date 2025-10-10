@@ -1,27 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    background-color: #fff8f0;
+
+
+* {
+  box-sizing: border-box;
 }
 
-/* Header styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; 
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #fff8f0;
+    box-sizing: border-box;
+}
+
+/* Header*/
+
 header {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 20px;
+    width: 100%;
+    background-color: peru;
 }
+.header-top { padding: 10px 20px; }
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
 
 .hamburger {
     font-size: 30px;
     cursor: pointer;
-    display: block;
+    color:white;
 }
+
+.hamburger:hover {color: palegreen;}
 
 nav ul {
     list-style: none;
-    margin: 20px;
+    margin: 20px 0;
+    margin-left: 15px;
     padding: 0;
     display: flex;
     gap: 20px;
@@ -31,13 +75,15 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
 }
+nav ul li a:hover {color: palegreen;}
 
 .hidden {
     display: none;
 }
+
 
 .menu-separator {
     margin-top: 10px;
@@ -45,33 +91,7 @@ nav ul li a {
     border: 1px solid #ccc;
 }
 
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; 
-    }
-
-    nav {
-        background-color: #f3f3f3;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 200px;
-        height: 100%;
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    nav ul {
-        padding-top: 20px;
-    }
-    
-    nav ul li a {
-        padding: 15px;
-        display: block;
-    }
-}
-
-/*jeu de rôle main styles */
+/*Jeu de rôles*/
 .context {
     font-size: 1.2em;
     margin-bottom: 30px;
@@ -101,39 +121,54 @@ nav ul li a {
 
 /* Footer styles */
 
+main{
+    flex:1;
+    padding: 20px;
+}
+
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
+    height: 3rem;
     background-color: peru;
-    text-align: center;
-    padding: 10px 0 15px; /* espace pour respirer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 99;
+    margin-top: auto;
+    position: sticky;
+    color: peru;
 }
 
 footer button {
     margin: 0 10px;
     padding: 8px 16px;
-    font-size: 1em;
+    font-size: 0.75em;
     border: none;
-    background-color: #fff;
+    background-color: white;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 footer button:hover {
-    background-color: #f0f0f0;
+    background-color: palegreen;
+    color: darkolivegreen;
 }
 
 
-/*  GALERIE STYLES */
+/*  GALERIE*/
 .galerie {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px 30px; /* 30px vertical, 20px horizontal */
-    margin-bottom: 150px; /* pour ne pas que le footer masque les plats */
+    gap: 40px 30px;
+    margin-bottom: 150px;
 }
 
 .plat {
@@ -146,8 +181,8 @@ footer button:hover {
 
 .plat img {
     width: 100%;
-    height: 500px; /* fixe la hauteur */
-    object-fit: cover; /* rogne proprement sans déformation */
+    height: 500px;
+    object-fit: cover;
     border-radius: 5px;
     display: block;
 }
@@ -161,7 +196,7 @@ footer button:hover {
     margin-top: 5px;
 }
 
-/*Galerie Poèmes styles */
+/*Poèmes*/
 .poeme {
     position: relative;
     background-size: cover;
@@ -191,7 +226,7 @@ footer button:hover {
     text-align: center;
 }
 
-/* Modal styles */
+/* Modale*/
 .modal {
     position: fixed;
     top: 0;
@@ -237,8 +272,13 @@ footer button:hover {
 }
 
 /* Responsive */
+
+
 @media (max-width: 900px) {
     .poeme {
+        flex: 1 1 calc(50% - 20px);
+    }
+     .plat {
         flex: 1 1 calc(50% - 20px);
     }
 }
@@ -247,20 +287,10 @@ footer button:hover {
     .poeme {
         flex: 1 1 100%;
     }
-}
-
-/* Responsive fallback pour petits écrans */
-@media (max-width: 900px) {
-    .plat {
-        flex: 1 1 calc(50% - 20px);
-    }
-}
-
-@media (max-width: 600px) {
-    .plat {
+     .plat {
         flex: 1 1 100%;
     }
-}
+} 
 
 .smalldiv {
     display: flex;
@@ -270,4 +300,5 @@ footer button:hover {
     font-size: small;
 
 }
+
 

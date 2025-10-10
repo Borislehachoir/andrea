@@ -10,15 +10,23 @@
 </head>
 <body>
 <header>
-    <div class="hamburger" onclick="toggleMenu()">
-        MENU🍋
+    <div class="header-top">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+            <span>Andrea.com</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            MENU🍋
+        </div>
     </div>
 
     <nav id="menu" class="hidden">
         <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
             <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos du site</a></li>
             <li><a href="poemes.html">Poèmes</a></li>
-            <li><a href="apropos.html">À propos</a></li>
             <li><a href="jeu.html">Morpion</a></li>
         </ul>
     </nav>
@@ -145,7 +153,7 @@ const scenes = {
 
 
 const faitsLoufoques = [
-    " The royal penguin was once thought to be a subspecies of the macaroni penguin, but we now know it isn't. And it's quite cute to be honest.",
+    "The royal penguin was once thought to be a subspecies of the macaroni penguin, but we now know it isn't. And it's quite cute to be honest.",
     " Citrus aren't fruits, but berries. They are classified as hesperidia, which sounds a little bit too poetic for bloody berries.",
     " Cats are believed to be the only mammals who cannot detect sweetness.",
     "The coqui frog might be small, but oh boy does it shout : more than 100 decibels ! That's as loud as a chainsaw !",
@@ -163,13 +171,11 @@ const faitsLoufoques = [
     "A few bird names I found funny or cute: Dunlin, Eurasian woodcock, White-tailed tropicbird, Goonie (sus), Man o'war, Brown booby (very sus), European Shag (terribly sus), Swallows, Eurasian blue tit, Chiffchaff, Starling and Nightingale. I love English."
 ]
 
-
 let currentScene = "start";
 let historique = [];
 
-
-function afficherScene(nomScene) {
-    if (currentScene !== nomScene) {
+function afficherScene(nomScene, isBack = false) {
+    if (!isBack && currentScene !== nomScene) {
         historique.push(currentScene);
     }
 
@@ -201,7 +207,7 @@ window.onload = () => {
     document.getElementById("wearesoback").onclick = () => {
         if (historique.length > 0) {
             const lastScene = historique.pop();
-            afficherScene(lastScene);
+            afficherScene(lastScene, true); // <-- ici on précise que c'est un retour
         } else {
             alert("Tu es déjà au début !");
         }

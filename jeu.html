@@ -10,24 +10,32 @@
 </head>
 <body>
 <header>
-    <div class="hamburger" onclick="toggleMenu()">
-        MENU🍓
+    <div class="header-top">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+            <span>Andrea.com</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            MENU🍋
+        </div>
     </div>
 
     <nav id="menu" class="hidden">
         <ul>
             <li><a href="index.html">Jeu de rôles💃🏻</a></li>
             <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos du site</a></li>
             <li><a href="poemes.html">Poèmes</a></li>
-            <li><a href="apropos.html">A propos</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
         </ul>
     </nav>
 
     <hr class="menu-separator hidden" id="separator">
 </header>
 <main>
-    <h1>Un jeu du morpion, by yours truly, Boris Rocchietti (pompé sur google)</h1>
-    <h2>Une fois que tu as fini de jouer (c'est la première grille), recharges la page.</h2>
+    <h1>Un jeu du morpion, inspiré d'un exemple trouvé sur Google Chrome</h1>
+    <h3>( la source se trouve dans le README)<h3>
     <hr> <br> <br>
 
 <h1>Le jeu du morpion</h1>
@@ -208,14 +216,14 @@ function main() {
           afficheur.sendMessage(
             "Le joueur " +
               joueurs[tour] +
-              ' a gagné ! <br /> <a href="morpion.html">Rejouer</a>'
+              ' a gagné ! <br /> <a href="jeu.html">Rejouer</a>'
           );
           return;
         }
 
         if (matchNul(pions)) {
           afficheur.sendMessage(
-            'Match Nul ! <br/> <a href="morpion.html">Rejouer</a>'
+            'Match Nul ! <br/> <a href="jeu.html">Rejouer</a>'
           );
           return;
         }
@@ -234,25 +242,3 @@ main();
 
 </body>
 </html>
-
-
-
-<h1>Le jeu du morpion</h1>
-  <div id="Jeu">
-    <div>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-    <div>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-    <div>
-      <button></button>
-      <button></button>
-      <button></button>
-    </div>
-    <div id="StatutJeu"></div>
-  </div> 
