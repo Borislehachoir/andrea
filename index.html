@@ -1,10 +1,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Cadeau pour Andréa</title>
+    <title>Surprise pour ma soeur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
-    <meta name="author" content="Par Boris le geekos">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -33,10 +31,10 @@
 
     <hr class="menu-separator hidden" id="separator">
 </header>
-<main>
-    <h1>Salut Andréa ! </h1>
+<main>    
+    <h1>Salut, grande soeur ! </h1>
     <p>Pour une fois, je me suis dit que j'allais mettre à profit mes compétences en informatique (avec l'aide de Chat) pour te proposer un cadeau un peu différent de d'habitude</p>
-    <p>Explore la page, testes les boutons. Le jeu te propose trois choix, et parmi les trois il y en a toujours un qui sera le mauvais. Quant au bouton Autisme... bon, tu verras par toi-même.</p>
+    <p>Explore la page, testes les boutons. Le jeu te propose trois choix, et parmi les trois il y en a toujours un qui sera le mauvais. Quant au bouton Autisme... au pire, clique dessus, tu verras bien.</p>
     <hr> <br> <br>
     <div id="texte" class="context"></div>
     <div id="choix" class="choix"></div>
@@ -60,7 +58,7 @@ function toggleMenu() {
 
 const scenes = {
     start: {
-        texte: "Vous venez d'être virée de votre emploi... Il est 21h55. Votre copain vous fixe depuis la webcam.",
+        texte: "Vous venez d'être virée de votre emploi... Il est 21h55. Votre compagnon vous fixe depuis derrière la webcam.",
         options: [
             { texte: "Pousser un awaaaaaaaa désespéré", next: "rire" },
             { texte: "Lui dire oui", next: "norvege" },
@@ -84,11 +82,11 @@ const scenes = {
         ]
     },
     rire2: {
-        texte: "Ahahaha sacré Maxime, mais quel humoriste ! Il rit aussi, et vous passez un super moment en Norvège. Vous revenez, le master se passe trop bien et vous adoptez un adorable petit chat. Il s'appelle Ténébranus, et il est tout simplement adorable.",
+        texte: "Ahahaha sacré compagnon, mais quel humoriste ! Il rit aussi, et vous passez un super moment en Norvège. Vous revenez, le master se passe trop bien et vous adoptez un adorable petit chat. Il s'appelle Ténébranus, et il est tout simplement adorable.",
         options: [
             {texte : "Passer un moment avec le chat", next: "chat"},
             {texte : "Passer un moment devant une vidéo de Laink et Terracid", next:"ytb"},
-            {texte : "Embrasser passionnément Maxime et lui dire 'merci d'être là pélo, je t'aime en vrai'"}
+            {texte : "Embrasser passionnément votre petit ami et lui dire 'merci d'être là pélo, je t'aime en vrai'"}
         ]
     },
     refuser: {
@@ -99,7 +97,7 @@ const scenes = {
         texte: "Il rigole. Tu rigoles aussi. Il ne rigole plus. Tu ne comprends pas pourquoi. Il s'apprête à dire quelque chose, et tu t'inquiètes qu'il dise... ",
         options: [
             { texte: "Ahahah tu y as cru ? ", next: "trodebar" },
-            { texte: "Je veux vraiment t'épouser, Andréa. Tiens, cette bague en opale, bleue comme tes yeux sublimes.", next: "nooon" },
+            { texte: "Je veux vraiment t'épouser, Anon. En gage d'amour, je t'offre cette bague en opale, bleue comme tes yeux sublimes, entouré d'un filin d'or doré comme tes sublimes boucles.", next: "nooon" },
             { texte: "Gros silence.", next: "silence" }]
     },
 
@@ -113,9 +111,9 @@ const scenes = {
         ]
     },
     ytb : {
-        texte: "Tu t'allumes une vidéo de Laint et Terracid, en espérant qu'elle sera bonne.",
+        texte: "Tu t'allumes une vidéo de Lainteau et Terracidre. Tu espères sincèrement qu'elle soit exceptionnelle.",
         options: [
-            { texte: "c'est de la merde.",},
+            { texte: "Finalement c'était naze.",},
             { texte: "Faire une pause sans écrans", next: "pause" },
             { texte: "Elle est exceptionnelle, quelle masterclass je pleure" }
         ]
@@ -126,7 +124,7 @@ const scenes = {
         options: []
     },
     nooon: {
-        texte: "Tu restes plantée là, la bouche grande ouverte. Et puis tu lâches un AWAAAAAAAW.",
+        texte: "Tu restes plantée là, la bouche grande ouverte. Et puis tu cries en mode 'AAAAAAAAAAfifglsnguwhdxidetfglgcelfrdciputdcwbe'.",
         options: []
     },
    silence : {
@@ -142,7 +140,7 @@ const scenes = {
         options: []
     },
     chat_mort: {
-        texte: "Ténébranus reste là, devant sa gamelle. Il commence à perdre ses poils, et devient un sphinx. Maxime est horrifié, et te demande qu'est-ce que tu as fait à son chat. Tu lui dis 'rien', il te dit 'alors tu ne me vaux pas'. Il te jette en dehors de chez lui sous fond sonore de chaudière qui fuit, sans argent ni rien. Tu finis pauvre, droguée, chauve et tu meurs. ",
+        texte: "Ténébranus reste là, devant sa gamelle. Il commence à perdre ses poils, et devient un sphinx. Ton compagnon est clairement horrifié, et te demande qu'est-ce que tu as fait à son chat. Tu lui dis 'rien', il te dit 'alors tu ne me vaux pas'. Il te jette en dehors de chez lui sous fond sonore de chaudière qui fuit, sans argent ni rien. Tu finis pauvre, droguée (avec une calvitie en prime) et tu meurs. ",
         options: []
     },
     pause: {
@@ -159,7 +157,6 @@ const faitsLoufoques = [
     "The coqui frog might be small, but oh boy does it shout : more than 100 decibels ! That's as loud as a chainsaw !",
     "The word strawberry is peculiar amongst Germanic languages. They think it came from the habit kids had to string them with straws. ",
     "The name Andrea, which we inherited from Greeks, can be traced back to Proto-Indo-European, and have derivations in sanskrit, old Irish and Latin. It still means 'man', though. ",
-    "Maximus means the biggest, but its origins can be traced further than latin : méǵh₂s, in Proto-Indo-European, which means big, great. ",
     "Wearing a tie can reduce the blood flow to your brain by 7.5%. Some managers should considering loosening theirs...",
     "Sans ambages, cet anachorète s'est saisi de ce vitoulet vireux, et l'a envoyé se faire lanlaire. Un pied-plat s'en empare, mais ce faisant, ramasse un gadin. Quelle gabegie ! (Si tu as compris toute la phrase sans un dictionnaire, je te paierai une glace chez Raugi)",
     "Straight lines do not exist. If you zoom enough, you'll see they're actually slightly curved.",
@@ -207,15 +204,15 @@ window.onload = () => {
     document.getElementById("wearesoback").onclick = () => {
         if (historique.length > 0) {
             const lastScene = historique.pop();
-            afficherScene(lastScene, true); // <-- ici on précise que c'est un retour
+            afficherScene(lastScene, true);
         } else {
-            alert("Tu es déjà au début !");
+            alert("T'es déjà au début, pélo !");
         }
     };
 
     document.getElementById("autisme").onclick = () => {
         const fait = faitsLoufoques[Math.floor(Math.random() * faitsLoufoques.length)];
-        alert("Did you know ? " + fait);
+        alert("Did you know ? 🤓👆🏻 " + fait);
     };
 };
 </script>

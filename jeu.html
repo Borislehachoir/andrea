@@ -1,10 +1,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Cadeau pour Andréa</title>
+    <title>Surprise pour ma soeur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un jeu interactif pour une soeur incroyable">
-    <meta name="author" content="Par Boris le geekos">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles2.css">
 </head>
@@ -34,8 +32,8 @@
     <hr class="menu-separator hidden" id="separator">
 </header>
 <main>
-    <h1>Un jeu du morpion, inspiré d'un exemple trouvé sur Google Chrome</h1>
-    <h3>( la source se trouve dans le README)<h3>
+    <h1>Un jeu du morpion, inspiré assez librement d'un exemple trouvé sur Codepen</h1>
+    <h3>(la source se trouve dans le README si ça t'intéresse)<h3>
     <hr> <br> <br>
 
 <h1>Le jeu du morpion</h1>
@@ -194,7 +192,7 @@ function main() {
   var jeuEstFini = false;
   var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
   afficheur.sendMessage(
-    "Le jeu peut commencer ! <br /> Joueur " +
+    "Prêts ? Si c'est oui, alors le jeu peut désormais commencer ! <br /> Joueur " +
       joueurs[tour] +
       " c'est votre tour."
   );
@@ -204,9 +202,9 @@ function main() {
 
       if (!estValide(this)) {
         afficheur.sendMessage(
-          "Case occupée ! <br />Joueur " +
+          "Eh non, la case est occupée ! <br />Joueur " +
             joueurs[tour] +
-            " c'est toujours à vous !"
+            " c'est toujours à toi !"
         );
       } else {
         setSymbol(this, joueurs[tour]);
@@ -214,16 +212,16 @@ function main() {
 
         if (jeuEstFini) {
           afficheur.sendMessage(
-            "Le joueur " +
+            "Félicitations ! Le joueur " +
               joueurs[tour] +
-              ' a gagné ! <br /> <a href="jeu.html">Rejouer</a>'
+              ' a gagné ! <br /> <a href="jeu.html">Veux-tu rejouer ?</a>'
           );
           return;
         }
 
         if (matchNul(pions)) {
           afficheur.sendMessage(
-            'Match Nul ! <br/> <a href="jeu.html">Rejouer</a>'
+            'Dommage, match nul cette fois-ci ! <br/> <a href="jeu.html">Veux-tu rejouer ?</a>'
           );
           return;
         }
