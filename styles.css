@@ -271,6 +271,63 @@ footer button:hover {
     display: none;
 }
 
+
+/*Formulaire*/ 
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid peru;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:hover { border:2px solid; background-color : black; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+/* Style normal */
+.feedback-input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* Au survol du champ */
+.feedback-input:hover::placeholder {
+    color:palegreen; 
+    font-style: normal;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:peru;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background: palegreen; }
+
+
 /* Responsive */
 
 

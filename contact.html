@@ -1,0 +1,120 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Surprise pour ma soeur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <a href="admin.html"><img src="logo.png" alt="Logo" /></a>
+            <span>Andrea.com</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            MENU🍋
+        </div>
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos du site</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="poemes.html">Poèmes</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+        </ul>
+    </nav>
+
+    <hr class="menu-separator hidden" id="separator">
+</header>
+<main>
+    <h1>Salut grande soeur !</h1>
+    <div style="font-style: italic;">Je me suis dis que tant qu'à faire un site, j'essayerais de le faire jusqu'au bout. </div> <br>
+   
+ <h1>On se parle ? </h1>
+
+<form id="messageForm">      
+  <input id="name" name="name" type="text" class="feedback-input" placeholder="Nom" />   
+  <input id="email" name="email" type="text" class="feedback-input" placeholder="Email" />
+  <textarea id="message" name="text" class="feedback-input" placeholder="Votre message"></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"></script>
+
+</main>
+<footer>
+    <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+</footer>
+<script>
+
+function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const separator = document.getElementById("separator");
+
+        menu.classList.toggle("hidden");
+        separator.classList.toggle("hidden");
+    }
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmN1UgexStdiOm4VQ1HDUFtzFi4WTvVHo",
+    authDomain: "formulaire-50044.firebaseapp.com",
+    projectId: "formulaire-50044",
+    storageBucket: "formulaire-50044.firebasestorage.app",
+    messagingSenderId: "837388957419",
+    appId: "1:837388957419:web:d1b0d5c4a7431664fe30ae",
+    measurementId: "G-EQE4P4CETC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 📨 Ajouter un message
+  async function ajouterMessage(nom, email, message) {
+    try {
+      await addDoc(collection(db, "messages"), {
+        nom,
+        email,
+        message,
+        date: new Date()
+      });
+      alert("Message envoyé !");
+      document.getElementById("messageForm").reset();
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du message :", error);
+      alert("Une erreur est survenue, veuillez réessayer.");
+    }
+  }
+
+  // 💾 Événement sur le formulaire
+  document.getElementById("messageForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nom = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!nom || !email || !message) {
+      alert("Merci de remplir tous les champs !");
+      return;
+    }
+
+    ajouterMessage(nom, email, message);
+  });
+</script>
+</body>
+</html>
+
+

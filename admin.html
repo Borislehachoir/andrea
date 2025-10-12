@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Page administrateur</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+#loginSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.8s ease;
+  z-index: 100;
+}
+
+#loginSection.hidden {
+  transform: translateY(-100%);
+}
+
+#loginForm { display: flex; flex-direction: column; gap: 1rem; width: 300px; }
+#loginForm input, #loginForm button { padding: 0.5rem; font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<section id="loginSection">
+  <h2>Se connecter à l'espace administrateur</h2>
+  <form id="loginForm">
+    <input type="email" id="username" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Mot de passe" required>
+    <label style="font-size:.9rem;">
+      <input type="checkbox" id="showPwdChk"> Voir le mot de passe 👁
+    </label>
+    <button type="submit">Se connecter </button>
+  </form>
+</section>
+
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+            <span>Andrea.com</span>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">MENU🍋</div>
+    </div>
+
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="index.html">Jeu de rôles💃🏻</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="apropos.html">A propos du site</a></li>
+            <li><a href="poemes.html">Poèmes</a></li>
+            <li><a href="jeu.html">Morpion</a></li>
+        </ul>
+    </nav>
+    <hr class="menu-separator hidden" id="separator">
+</header>
+
+<main>
+    <h1>Interface Admin</h1>
+   
+    <h1>Modifier un message </h1>
+    <form id="messageForm">      
+      <input id="name" name="name" type="text" class="feedback-input" placeholder="Nom" />   
+      <input id="email" name="email" type="text" class="feedback-input" placeholder="Email" />
+      <textarea id="message" name="text" class="feedback-input" placeholder="Votre message"></textarea>
+      <button type="submit">Modifier</button>
+    </form>
+
+    <h2>Messages reçus</h2>
+    <table>
+      <thead>
+        <tr><th>Nom</th><th>Email</th><th>Message</th><th>Actions</th></tr>
+      </thead>
+      <tbody id="messageTable"></tbody>
+      <hr>
+    </table>
+</main>
+
+<footer>
+    <h1>Footer du site</h1>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    const separator = document.getElementById("separator");
+    menu.classList.toggle("hidden");
+    separator.classList.toggle("hidden");
+}
+</script>
+
+<script type="module" src="script-admin.js">
+
+
+
+</script>
+</body>
+</html>
