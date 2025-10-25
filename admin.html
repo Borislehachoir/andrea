@@ -69,7 +69,7 @@
 <main>
     <h1>Interface Admin</h1>
    
-    <h2>Modifier un message</h2>
+    <h1>Modifier un message </h1>
     <form id="messageForm">      
       <input id="name" name="name" type="text" class="feedback-input" placeholder="Nom" />   
       <input id="email" name="email" type="text" class="feedback-input" placeholder="Email" />
@@ -83,33 +83,7 @@
         <tr><th>Nom</th><th>Email</th><th>Message</th><th>Actions</th></tr>
       </thead>
       <tbody id="messageTable"></tbody>
-    </table>
-
-    <hr>
-
-    <!-- Section poèmes -->
-    <h2>Gérer les poèmes</h2>
-    <form id="poemeForm">
-      <input type="hidden" id="titleId">
-
-      <label>Titre du poème</label>
-      <input type="text" id="title" placeholder="Titre" required>
-
-      <label>Texte du poème</label>
-      <textarea id="text" rows="6" placeholder="Texte" required></textarea>
-
-      <label>URL image de fond</label>
-      <input type="text" id="bgImg" placeholder="Lien image" required>
-
-      <button type="submit">Enregistrer</button>
-    </form>
-
-    <h3>Liste des poèmes</h3>
-    <table>
-      <thead>
-        <tr><th>Titre</th><th>Texte</th><th>Image</th><th>Date</th><th>Actions</th></tr>
-      </thead>
-      <tbody id="poemesTable"></tbody>
+      <hr>
     </table>
 </main>
 
@@ -126,6 +100,10 @@ function toggleMenu() {
 }
 </script>
 
-<script type="module" src="scriptadmin.js"></script>
+<script type="module" src="script-admin.js">
+
+
+
+</script>
 </body>
 </html>

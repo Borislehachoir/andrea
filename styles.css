@@ -290,7 +290,7 @@ footer button:hover {
   outline:0;
 }
 
-.feedback-input:hover { border:2px solid; background-color : black; color: white; }
+.feedback-input:hover { border:2px solid; background-color : black; color:white; }
 
 textarea {
   height: 150px;
